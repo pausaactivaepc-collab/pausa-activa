@@ -16,37 +16,74 @@ let categoriaSeleccionada = "Todas";
 // CARGAR ACTIVIDADES
 // =========================
 
-fetch("https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=actividades")
-    .then(respuesta => respuesta.json())
-    .then(datos => {
+// =========================
+// CARGAR ACTIVIDADES
+// =========================
+
+const API_ACTIVIDADES =
+    "https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=actividades";
+
+async function cargarActividades(intentos = 3) {
+
+    contenedor.innerHTML = `
+        <div class="sin-resultados">
+            <h3>Cargando actividades...</h3>
+            <p>Estamos buscando las actividades disponibles.</p>
+        </div>
+    `;
+
+    try {
+
+        const respuesta = await fetch(API_ACTIVIDADES, {
+            cache: "no-store"
+        });
+
+        if (!respuesta.ok) {
+            throw new Error("Error HTTP " + respuesta.status);
+        }
+
+        const datos = await respuesta.json();
+
+        if (!Array.isArray(datos)) {
+            throw new Error("La respuesta no tiene un formato válido.");
+        }
+
         actividades = datos;
         mostrarActividades(actividades);
-    })
-   
-   
 
-    .catch(error => {
+    } catch (error) {
 
-        console.error(
-            "Error al cargar las actividades:",
-            error
-        );
+        console.error("Error al cargar actividades:", error);
 
-        contenedor.innerHTML = `
-            <div class="sin-resultados">
+        if (intentos > 1) {
 
-                <h3>
-                    No se pudieron cargar las actividades.
-                </h3>
+            console.log(
+                "Reintentando... Intentos restantes:",
+                intentos - 1
+            );
 
-                <p>
-                    Intentá nuevamente.
-                </p>
+            setTimeout(() => {
+                cargarActividades(intentos - 1);
+            }, 1500);
 
-            </div>
-        `;
+        } else {
 
-    });
+            contenedor.innerHTML = `
+                <div class="sin-resultados">
+                    <h3>No pudimos cargar las actividades</h3>
+                    <p>
+                        Estamos intentando conectar con la información.
+                        Volvé a intentar en unos segundos.
+                    </p>
+                </div>
+            `;
+
+        }
+
+    }
+}
+
+cargarActividades();
 
 
 // =========================
