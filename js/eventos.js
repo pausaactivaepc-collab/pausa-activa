@@ -23,51 +23,78 @@ const contador =
 // CARGAR EVENTOS
 // =========================
 
-fetch("https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=eventos")
-    .then(respuesta => {
+// =========================
+// CARGAR EVENTOS
+// =========================
+
+const API_EVENTOS =
+    "https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=eventos";
+
+async function cargarEventos(intentos = 3) {
+
+    contenedor.innerHTML = `
+        <div class="sin-eventos">
+            <h2>Cargando eventos...</h2>
+            <p>Estamos buscando los eventos disponibles.</p>
+        </div>
+    `;
+
+    try {
+
+        const respuesta = await fetch(API_EVENTOS, {
+            cache: "no-store"
+        });
 
         if (!respuesta.ok) {
-            throw new Error("No se pudo cargar eventos.json");
+            throw new Error("Error HTTP " + respuesta.status);
         }
 
-        return respuesta.json();
+        const datos = await respuesta.json();
 
-    })
-
-    .then(datos => {
+        if (!Array.isArray(datos)) {
+            throw new Error("La respuesta no tiene un formato válido.");
+        }
 
         eventos = datos;
-
         mostrarEventos();
 
-    })
+    } catch (error) {
 
-    .catch(error => {
+        console.error("Error al cargar eventos:", error);
 
-        console.error(error);
+        if (intentos > 1) {
 
-        contador.textContent =
-            "No se pudieron cargar los eventos.";
+            setTimeout(() => {
+                cargarEventos(intentos - 1);
+            }, 1500);
 
-        contenedor.innerHTML = `
-            <div class="sin-eventos">
+        } else {
 
-                <i data-lucide="circle-alert"></i>
+            contador.textContent = "No pudimos cargar los eventos.";
 
-                <h2>
-                    No pudimos cargar los eventos
-                </h2>
+            contenedor.innerHTML = `
+                <div class="sin-eventos">
+                    <i data-lucide="circle-alert"></i>
 
-                <p>
-                    Intentá nuevamente.
-                </p>
+                    <h2>
+                        No pudimos cargar los eventos
+                    </h2>
 
-            </div>
-        `;
+                    <p>
+                        Estamos intentando conectar con la información.
+                        Volvé a intentar en unos segundos.
+                    </p>
+                </div>
+            `;
 
-        lucide.createIcons();
+            lucide.createIcons();
 
-    });
+        }
+
+    }
+}
+
+cargarEventos();
 
 
 // =========================
