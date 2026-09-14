@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventos | Pausa Activa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/eventos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Pausa Activa">
+        </a>
+
+        <nav class="nav" id="navMenu">
+
+            <a href="index.html">
+                <i data-lucide="house"></i>
+                Inicio
+            </a>
+
+            <a href="index.html#actividades">
+                <i data-lucide="sparkles"></i>
+                Actividades
+            </a>
+
+            <a href="eventos.html" class="activo">
+                <i data-lucide="calendar-days"></i>
+                Eventos
+            </a>
+
+            <a href="instituciones.html">
+                <i data-lucide="building-2"></i>
+                Instituciones
+            </a>
+
+            <a href="nosotros.html">
+                <i data-lucide="users"></i>
+                Nosotros
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="eventos-hero">
+
+    <div class="container">
+
+        <span class="eventos-etiqueta">
+            <i data-lucide="calendar-days"></i>
+            EXPERIENCIAS PARA COMPARTIR
+        </span>
+
+        <h1>
+            Próximos eventos
+        </h1>
+
+        <p>
+            Encontrá encuentros, actividades y experiencias
+            para disfrutar tu tiempo libre.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="eventos-contenido">
+
+    <div class="container">
+
+        <div class="filtros-eventos">
+
+            <div class="filtro-evento">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="text"
+                    id="buscarEvento"
+                    placeholder="Buscar un evento...">
+
+            </div>
+
+
+            <div class="filtro-evento">
+
+                <i data-lucide="layers"></i>
+
+                <select id="filtroCategoria">
+
+                    <option value="">Todas las categorías</option>
+
+                    <option value="Deportes">
+                        Deportes
+                    </option>
+
+                    <option value="Arte y Cultura">
+                        Arte y Cultura
+                    </option>
+
+                    <option value="Música">
+                        Música
+                    </option>
+
+                    <option value="Tecnología">
+                        Tecnología
+                    </option>
+
+                    <option value="Bienestar">
+                        Bienestar
+                    </option>
+
+                    <option value="Aire Libre">
+                        Aire Libre
+                    </option>
+
+                    <option value="Comunidad">
+                        Comunidad
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filtro-evento">
+
+                <i data-lucide="map-pin"></i>
+
+                <select id="filtroDistrito">
+
+                    <option value="">
+                        Todos los distritos
+                    </option>
+
+                    <option value="Villa Nueva">
+                        Villa Nueva
+                    </option>
+
+                    <option value="Rodeo de la Cruz">
+                        Rodeo de la Cruz
+                    </option>
+
+                    <option value="Capilla del Rosario">
+                        Capilla del Rosario
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filtro-evento">
+
+                <i data-lucide="calendar-range"></i>
+
+                <select id="filtroFecha">
+
+                    <option value="">
+                        Cualquier fecha
+                    </option>
+
+                    <option value="proximos">
+                        Próximos eventos
+                    </option>
+
+                    <option value="este-mes">
+                        Este mes
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="eventos-info">
+
+            <span id="contadorEventos">
+                Cargando eventos...
+            </span>
+
+        </div>
+
+
+        <div
+            id="contenedorEventos"
+            class="eventos-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Pausa Activa">
+
+            <p>
+                Una propuesta para descubrir nuevas formas
+                de disfrutar tu tiempo libre.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Explorá</h3>
+
+            <a href="index.html">Inicio</a>
+            <a href="index.html#actividades">Actividades</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="instituciones.html">Instituciones</a>
+            <a href="nosotros.html">Nosotros</a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Seguinos</h3>
+
+           <a 
+             href="https://www.instagram.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="instagram"></i>
+             Instagram
+
+            </a>
+
+           <a 
+             href="https://www.tiktok.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="tiktok"></i>
+              TikTok
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Pausa Activa · Proyecto educativo · Guaymallén
+        </p>
+
+    </div>
+
+</footer>
+
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/eventos.js"></script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+
+</html>

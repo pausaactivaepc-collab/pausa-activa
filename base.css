@@ -1,0 +1,74 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --azul: #05163b;
+    --violeta: #6037b2;
+    --turquesa: #01939d;
+    --amarillo: #feab08;
+    --rojo: #fd3c46;
+    --blanco: #fffefe;
+
+    --texto: #05163b;
+    --texto-suave: #687080;
+    --borde: #e5e7ec;
+
+    --radio: 18px;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button,
+a,
+select {
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+}

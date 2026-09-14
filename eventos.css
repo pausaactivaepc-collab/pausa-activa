@@ -1,0 +1,497 @@
+/* =========================
+   HERO EVENTOS
+========================= */
+
+.eventos-hero {
+    padding: 90px 0 85px;
+
+    background:
+        linear-gradient(
+            135deg,
+          
+            #fd3c46
+        );
+
+    color: var(--blanco);
+}
+
+.eventos-etiqueta {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.18);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+}
+
+.eventos-etiqueta svg {
+    width: 17px;
+}
+
+.eventos-hero h1 {
+    margin: 20px 0 10px;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.05;
+}
+
+.eventos-hero p {
+    max-width: 620px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    opacity: .95;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.eventos-contenido {
+    padding: 70px 0 100px;
+
+    background: #fff8ee;
+
+    min-height: 60vh;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros-eventos {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.filtro-evento {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 16px;
+
+    min-height: 52px;
+
+    background: white;
+
+    border: 1px solid #eadfd0;
+
+    border-radius: 14px;
+
+    transition: .2s;
+}
+
+.filtro-evento:focus-within {
+
+    border-color: var(--amarillo);
+
+    box-shadow:
+        0 0 0 3px rgba(254,171,8,.15);
+}
+
+.filtro-evento svg {
+
+    width: 19px;
+
+    color: var(--rojo);
+
+    flex-shrink: 0;
+}
+
+.filtro-evento input,
+.filtro-evento select {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    color: var(--azul);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.eventos-info {
+
+    margin-bottom: 25px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.eventos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.evento-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 22px;
+
+    border: 1px solid #eee2d4;
+
+    box-shadow:
+        0 8px 25px rgba(5,22,59,.07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.evento-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(5,22,59,.12);
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.evento-imagen {
+
+    height: 220px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #f1e8dc;
+}
+
+.evento-imagen img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .35s ease;
+}
+
+.evento-card:hover
+.evento-imagen img {
+
+    transform: scale(1.05);
+}
+
+.evento-categoria {
+
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: var(--rojo);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.evento-imagen-vacia {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--rojo);
+}
+
+.evento-imagen-vacia svg {
+
+    width: 55px;
+    height: 55px;
+}
+
+
+/* =========================
+   CONTENIDO TARJETA
+========================= */
+
+.evento-contenido {
+
+    padding: 24px;
+}
+
+.evento-fecha {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 10px;
+
+    color: var(--rojo);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.evento-fecha svg {
+
+    width: 16px;
+}
+
+.evento-contenido h2 {
+
+    margin-bottom: 10px;
+
+    color: var(--azul);
+
+    font-size: 21px;
+
+    line-height: 1.25;
+}
+
+.evento-descripcion {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.evento-datos {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+}
+
+.evento-datos span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+.evento-datos svg {
+
+    width: 16px;
+
+    color: var(--turquesa);
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.btn-evento {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 12px 16px;
+
+    border-radius: 12px;
+
+    background: var(--rojo);
+
+    color: white;
+
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.btn-evento svg {
+
+    width: 17px;
+
+    transition: transform .2s;
+}
+
+.btn-evento:hover {
+
+    background: var(--azul);
+
+}
+
+.btn-evento:hover svg {
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   SIN EVENTOS
+========================= */
+
+.sin-eventos {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.sin-eventos svg {
+
+    width: 55px;
+
+    height: 55px;
+
+    color: var(--rojo);
+
+    margin-bottom: 15px;
+}
+
+.sin-eventos h2 {
+
+    color: var(--azul);
+
+    margin-bottom: 8px;
+}
+
+.sin-eventos p {
+
+    color: #666;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .eventos-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .filtros-eventos {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .eventos-hero {
+
+        padding: 65px 0;
+
+    }
+
+    .eventos-contenido {
+
+        padding: 50px 0 70px;
+
+    }
+
+    .filtros-eventos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .eventos-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

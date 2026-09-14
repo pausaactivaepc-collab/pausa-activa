@@ -1,0 +1,133 @@
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .hero-visual img {
+        max-width: 480px;
+        transform: none;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .eventos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================
+   TABLET PEQUEÑA
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        padding: 60px 20px;
+    }
+
+    .hero-text {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        margin-top: 10px;
+    }
+
+    .hero-visual img {
+        max-width: 480px;
+    }
+
+    .actividad-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .actividad-imagen {
+        min-height: 350px;
+    }
+
+    .actividad-info {
+        padding: 35px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .hero-content {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-categorias {
+        gap: 8px;
+    }
+
+    .chip {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtros select {
+        width: 100%;
+    }
+
+    .cards-grid,
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actividad-info h1 {
+        font-size: 34px;
+    }
+
+    .actividad-datos {
+        grid-template-columns: 1fr;
+    }
+
+    .actividad-contacto .btn-ver,
+    .actividad-contacto .btn-mapa {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

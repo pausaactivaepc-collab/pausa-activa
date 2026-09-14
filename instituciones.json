@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nombre": "Polideportivo Nicolino Locche",
+    "descripcion": "Espacio deportivo con propuestas para jóvenes.",
+    "direccion": "Dirección de ejemplo",
+    "distrito": "Villa Nueva",
+    "telefono": "261-0000000",
+    "correo": "contacto@ejemplo.com",
+    "instagram": "https://instagram.com/",
+    "facebook": "",
+    "sitioWeb": "",
+    "imagen": "images/instituciones/logo-nicolino.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Centro Cultural Pascual Lauriente",
+    "descripcion": "Espacio cultural con talleres y propuestas artísticas.",
+    "direccion": "Dirección de ejemplo",
+    "distrito": "Villa Nueva",
+    "telefono": "261-0000001",
+    "correo": "contacto@ejemplo.com",
+    "instagram": "",
+    "facebook": "",
+    "sitioWeb": "",
+    "imagen": "images/instituciones/logo-pascual.png"
+  }
+]

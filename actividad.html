@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad | Pausa Activa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/paginas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Pausa Activa">
+        </a>
+
+        <nav class="nav" id="navMenu">
+
+            <a href="index.html">
+                <i data-lucide="house"></i>
+                <span>Inicio</span>
+            </a>
+
+            <a href="index.html#actividades">
+                <i data-lucide="sparkles"></i>
+                <span>Actividades</span>
+            </a>
+
+            <a href="eventos.html">
+                <i data-lucide="calendar-days"></i>
+                <span>Eventos</span>
+            </a>
+
+            <a href="instituciones.html">
+                <i data-lucide="building-2"></i>
+                <span>Instituciones</span>
+            </a>
+
+            <a href="nosotros.html">
+                <i data-lucide="users"></i>
+                <span>Nosotros</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="actividad-pagina">
+
+        <div class="container">
+
+            <a
+                href="index.html#actividades"
+                class="volver">
+
+                <i data-lucide="arrow-left"></i>
+
+                Volver a actividades
+
+            </a>
+
+
+            <div
+                id="detalleActividad"
+                class="detalle-actividad">
+
+                <div class="actividad-cargando">
+
+                    <i data-lucide="loader-circle"></i>
+
+                    <p>Cargando actividad...</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="actividad-final">
+
+        <div class="container">
+
+            <div class="actividad-final-contenido">
+
+                <i data-lucide="sparkles"></i>
+
+                <h2>¿Encontraste algo para vos?</h2>
+
+                <p>
+                    Seguí explorando y descubrí nuevas formas
+                    de disfrutar tu tiempo libre.
+                </p>
+
+                <a
+                    href="index.html#actividades"
+                    class="btn-principal">
+
+                    Explorar actividades
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Pausa Activa">
+
+            <p>
+                Una propuesta para descubrir nuevas formas
+                de disfrutar tu tiempo libre.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Explorá</h3>
+
+            <a href="index.html">Inicio</a>
+            <a href="index.html#actividades">Actividades</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="instituciones.html">Instituciones</a>
+            <a href="nosotros.html">Nosotros</a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Seguinos</h3>
+
+           <a 
+             href="https://www.instagram.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="instagram"></i>
+             Instagram
+
+            </a>
+
+           <a 
+             href="https://www.tiktok.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="tiktok"></i>
+              TikTok
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Pausa Activa · Proyecto educativo · Guaymallén
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/actividad.js"></script>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+
+</html>

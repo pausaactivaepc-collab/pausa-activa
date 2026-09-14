@@ -1,0 +1,172 @@
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    background: var(--blanco);
+    position: relative;
+    z-index: 20;
+}
+
+.header-content {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.nav a svg {
+    width: 18px;
+    height: 18px;
+}
+
+.nav a:hover {
+    background: var(--violeta);
+    color: var(--blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(96,55,178,.18);
+}
+
+.nav a:hover svg {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   BOTÓN MENÚ CELULAR
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: transparent;
+    color: var(--azul);
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.menu-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 650px) {
+
+    .header-content {
+        min-height: 70px;
+        width: 90%;
+        margin: 0 auto;
+
+        justify-content: center;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo img {
+        width: 115px;
+    }
+
+    .menu-toggle {
+        display: flex;
+
+        position: absolute;
+        left: 0;
+    }
+
+    .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 12px 20px 16px;
+
+        background: var(--blanco);
+
+        border-top: 1px solid #eeeeee;
+        box-shadow: 0 12px 25px rgba(5,22,59,.10);
+    }
+
+    .nav.abierto {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+
+        padding: 13px 12px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    .nav a svg {
+        width: 19px;
+        height: 19px;
+    }
+
+}

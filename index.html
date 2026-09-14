@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pausa Activa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/actividades.css">
+    <link rel="stylesheet" href="css/tarjetas.css">
+    <link rel="stylesheet" href="css/eventos.css">
+    <link rel="stylesheet" href="css/paginas.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Pausa Activa">
+        </a>
+
+        <nav class="nav" id="navMenu">
+
+                <a href="index.html">
+                    <i data-lucide="house"></i>
+                    <span>Inicio</span>
+                </a>
+
+                <a href="#actividades">
+                    <i data-lucide="sparkles"></i>
+                    <span>Actividades</span>
+                </a>
+
+                <a href="eventos.html">
+                    <i data-lucide="calendar-days"></i>
+                    <span>Eventos</span>
+                </a>
+
+                <a href="instituciones.html">
+                    <i data-lucide="building-2"></i>
+                    <span>Instituciones</span>
+                </a>
+
+                <a href="nosotros.html">
+                    <i data-lucide="users"></i>
+                    <span>Nosotros</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================= -->
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="hero-etiqueta">
+                        TU PAUSA, TU ESPACIO
+                    </span>
+
+                    <h1>
+                        Mucho más que<br>
+                        tiempo libre.
+                    </h1>
+
+                    <p>
+                        Salí de la rutina, descubrí qué hacer hoy
+                        y elegí tu propia manera de disfrutar Guaymallén.
+                    </p>
+
+                    <div class="search-box">
+
+                        <i data-lucide="search"></i>
+
+                        <input
+                            type="text"
+                            id="buscador"
+                            placeholder="¿Qué actividad querés hacer?"
+                            autocomplete="off">
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <img
+                        src="images/hero.png"
+                        alt="Jóvenes disfrutando actividades recreativas">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACTIVIDADES
+        ========================= -->
+
+        <section class="actividades" id="actividades">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-tag">
+                            EXPLORÁ
+                        </span>
+
+                        <h2>
+                            Encontrá tu próxima actividad
+                        </h2>
+
+                        <p>
+                            Buscá una actividad y descubrí los lugares
+                            donde podés realizarla.
+                        </p>
+
+                    </div>
+
+                    <span id="contador" class="contador"></span>
+
+                </div>
+
+
+                <!-- CATEGORÍAS -->
+
+                <div class="hero-categorias">
+
+                    <button
+                        class="chip activo"
+                        data-categoria="Todas">
+
+                        <i data-lucide="sparkles"></i>
+                        <span>Todas</span>
+
+                    </button>
+
+
+                    <button
+                        class="chip"
+                        data-categoria="Deportes">
+
+                        <i data-lucide="dumbbell"></i>
+                        <span>Deportes</span>
+
+                    </button>
+
+
+                    <button
+                        class="chip"
+                        data-categoria="Arte y Cultura">
+
+                        <i data-lucide="palette"></i>
+                        <span>Arte y Cultura</span>
+
+                    </button>
+
+
+                    <button
+                        class="chip"
+                        data-categoria="Música">
+
+                        <i data-lucide="music"></i>
+                        <span>Música</span>
+
+                    </button>
+
+
+                    <button
+                        class="chip"
+                        data-categoria="Bienestar">
+
+                        <i data-lucide="heart-pulse"></i>
+                        <span>Bienestar</span>
+
+                    </button>
+
+
+                    <button
+                        class="chip"
+                        data-categoria="Comunidad">
+
+                        <i data-lucide="handshake"></i>
+                        <span>Comunidad</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="filtros">
+
+                    <select id="filtroDistrito">
+
+                        <option value="">
+                            Todos los distritos
+                        </option>
+
+                        <option value="Villa Nueva">
+                            Villa Nueva
+                        </option>
+
+                        <option value="Rodeo de la Cruz">
+                            Rodeo de la Cruz
+                        </option>
+
+                        <option value="Capilla del Rosario">
+                            Capilla del Rosario
+                        </option>
+
+                    </select>
+
+
+                    <select id="filtroCosto">
+
+                        <option value="">
+                            Todos los costos
+                        </option>
+
+                        <option value="Gratuito">
+                            Gratuito
+                        </option>
+
+                        <option value="Pago">
+                            Pago
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TARJETAS -->
+
+                <div
+                    id="contenedorActividades"
+                    class="cards-grid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ENCONTRÁ ALGO PARA VOS
+        ========================= -->
+
+        <section class="encontra">
+
+            <div class="container">
+
+                <div class="titulo-centro">
+
+                    <span class="seccion-etiqueta">
+                        ¿NO SABÉS QUÉ HACER?
+                    </span>
+
+                    <h2>
+                        Encontrá algo para vos.
+                    </h2>
+
+                    <p>
+                        Elegí lo que tenés ganas de hacer
+                        y descubrí propuestas.
+                    </p>
+
+                </div>
+
+
+                <div class="opciones-encontra">
+
+
+                    <button
+                        class="opcion-encontra"
+                        data-filtro="Deportes">
+
+                        <i data-lucide="dumbbell"></i>
+
+                        <strong>
+                            Quiero moverme
+                        </strong>
+
+                        <small>
+                            Deportes y aire libre
+                        </small>
+
+                        <span class="opcion-flecha">
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="opcion-encontra"
+                        data-filtro="Arte y Cultura">
+
+                        <i data-lucide="palette"></i>
+
+                        <strong>
+                            Quiero crear
+                        </strong>
+
+                        <small>
+                            Arte y cultura
+                        </small>
+
+                        <span class="opcion-flecha">
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="opcion-encontra"
+                        data-filtro="Comunidad">
+
+                        <i data-lucide="handshake"></i>
+
+                        <strong>
+                            Quiero compartir
+                        </strong>
+
+                        <small>
+                            Comunidad y encuentros
+                        </small>
+
+                        <span class="opcion-flecha">
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="opcion-encontra"
+                        data-filtro="Bienestar">
+
+                        <i data-lucide="heart-pulse"></i>
+
+                        <strong>
+                            Quiero desconectar
+                        </strong>
+
+                        <small>
+                            Bienestar y recreación
+                        </small>
+
+                        <span class="opcion-flecha">
+                            <i data-lucide="arrow-right"></i>
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.png"
+                alt="Pausa Activa">
+
+            <p>
+                Una propuesta para descubrir nuevas formas
+                de disfrutar tu tiempo libre.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Explorá</h3>
+
+            <a href="index.html">Inicio</a>
+            <a href="index.html#actividades">Actividades</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="instituciones.html">Instituciones</a>
+            <a href="nosotros.html">Nosotros</a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Seguinos</h3>
+
+           <a 
+             href="https://www.instagram.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="instagram"></i>
+             Instagram
+
+            </a>
+
+           <a 
+             href="https://www.tiktok.com/pausaactiva_epc"
+             target="_blank"
+             rel="noopener noreferrer">
+
+             <i data-lucide="tiktok"></i>
+              TikTok
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Pausa Activa · Proyecto educativo · Guaymallén
+        </p>
+
+    </div>
+
+</footer>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+    lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

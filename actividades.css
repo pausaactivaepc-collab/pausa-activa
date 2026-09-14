@@ -1,0 +1,158 @@
+/* =========================
+   ACTIVIDADES
+========================= */
+
+.actividades {
+    width: 100%;
+
+    background: #dff8f8;
+
+    padding: 85px 0;
+}
+
+.section-header {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.section-tag {
+    display: inline-block;
+
+    color: var(--turquesa);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.section-header h2 {
+    color: var(--azul);
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--texto-suave);
+
+    line-height: 1.6;
+}
+
+.contador {
+    color: var(--texto-suave);
+
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.hero-categorias {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 17px;
+
+    border: 1px solid #cfd7e3;
+    border-radius: 30px;
+
+    background: var(--blanco);
+
+    color: var(--azul);
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chip svg {
+    width: 17px;
+    height: 17px;
+}
+
+.chip:hover {
+    color: var(--violeta);
+
+    border-color: var(--violeta);
+
+    transform: translateY(-2px);
+}
+
+.chip.activo {
+    background: var(--violeta);
+    color: var(--blanco);
+
+    border-color: var(--violeta);
+
+    box-shadow: 0 6px 15px rgba(96,55,178,.2);
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+.filtros select {
+    min-width: 190px;
+
+    padding: 11px 15px;
+
+    border: 2px solid var(--violeta);
+    border-radius: 12px;
+
+    background: var(--blanco);
+    color: var(--azul);
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.filtros select:hover {
+    border-color: var(--turquesa);
+
+    transform: translateY(-2px);
+}
+
+.filtros select:focus {
+    outline: none;
+
+    border-color: var(--amarillo);
+
+    box-shadow:
+        0 0 0 3px rgba(254,171,8,.18);
+}
