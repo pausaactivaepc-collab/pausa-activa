@@ -13,28 +13,35 @@ const id =
 // CARGAR EVENTO
 // =========================
 
-fetch("https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=eventos")
-    .then(respuesta => {
+// =========================
+// CARGAR EVENTO
+// =========================
+
+const API_EVENTOS =
+    "https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2UkE_B3uBaRG3v-64g88wwiackREskcClsZzD/exec?tipo=eventos";
+
+async function cargarEvento(intentos = 3) {
+
+    try {
+
+        const respuesta = await fetch(API_EVENTOS, {
+            cache: "no-store"
+        });
 
         if (!respuesta.ok) {
-
-            throw new Error(
-                "No se pudo cargar eventos.json"
-            );
-
+            throw new Error("Error HTTP " + respuesta.status);
         }
 
-        return respuesta.json();
+        const eventos = await respuesta.json();
 
-    })
-
-    .then(eventos => {
+        if (!Array.isArray(eventos)) {
+            throw new Error("La respuesta no tiene un formato válido.");
+        }
 
         const evento =
             eventos.find(
                 e => String(e.id) === String(id)
             );
-
 
         if (!evento) {
 
@@ -44,61 +51,61 @@ fetch("https://script.google.com/macros/s/AKfycbyWW-3ioy0-TNGfYn0p1sgHtgFxjTQ2Uk
             );
 
             return;
-
         }
 
-
-        // Comprobar vencimiento
-
-        const hoy =
-            new Date();
-
+        const hoy = new Date();
         hoy.setHours(0, 0, 0, 0);
 
-
         const fechaTexto =
-        String(evento.fechaFin).substring(0, 10);
+            String(evento.fechaFin).substring(0, 10);
 
-        const partes =
-        fechaTexto.split("-");
+        const partes = fechaTexto.split("-");
 
         const fechaFin =
-         new Date(
-           Number(partes[0]),
-           Number(partes[1]) - 1,
-           Number(partes[2]),
-           23,
-           59,
-           59
-        );
+            new Date(
+                Number(partes[0]),
+                Number(partes[1]) - 1,
+                Number(partes[2]),
+                23,
+                59,
+                59
+            );
 
+        if (fechaFin < hoy) {
 
-       if (fechaFin < hoy) {
+            mostrarError(
+                "Evento finalizado",
+                "Este evento ya terminó."
+            );
 
-         mostrarError(
-          "Evento finalizado",
-          "Este evento ya terminó."
-        );
-
-       return;
- 
+            return;
         }
-
 
         mostrarEvento(evento);
 
-    })
+    } catch (error) {
 
-    .catch(error => {
+        console.error("Error al cargar evento:", error);
 
-        console.error(error);
+        if (intentos > 1) {
 
-        mostrarError(
-            "No se pudo cargar el evento",
-            "Revisá el archivo eventos.json."
-        );
+            setTimeout(() => {
+                cargarEvento(intentos - 1);
+            }, 1500);
 
-    });
+        } else {
+
+            mostrarError(
+                "No se pudo cargar el evento",
+                "Estamos intentando conectar con la información. Volvé a intentar en unos segundos."
+            );
+
+        }
+
+    }
+}
+
+cargarEvento();
 
 
 // =========================
