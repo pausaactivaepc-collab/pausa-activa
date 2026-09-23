@@ -90,6 +90,35 @@ cargarActividades();
 // MOSTRAR ACTIVIDADES
 // =========================
 
+function mostrarEdad(edadMin, edadMax) {
+    const min = String(edadMin ?? "").trim();
+    const max = String(edadMax ?? "").trim();
+
+    const minConsultar = min.toLowerCase() === "consultar";
+    const maxConsultar = max.toLowerCase() === "consultar";
+
+    const minVacio = min === "" || minConsultar;
+    const maxVacio = max === "" || maxConsultar;
+
+    // Si no hay ninguna edad indicada
+    if (minVacio && maxVacio) {
+        return "Consultar";
+    }
+
+    // Solo edad mínima
+    if (!minVacio && maxVacio) {
+        return `Desde ${min} años`;
+    }
+
+    // Solo edad máxima
+    if (minVacio && !maxVacio) {
+        return `Hasta ${max} años`;
+    }
+
+    // Hay mínimo y máximo
+    return `${min} a ${max} años`;
+}
+
 function mostrarActividades(lista) {
 
     contenedor.innerHTML = "";
@@ -177,14 +206,11 @@ function mostrarActividades(lista) {
             <span>
                 <i data-lucide="clock-3"></i>
                 ${actividad.horario}
-            </span>
+           </span>
 
             <span>
-                <i data-lucide="users"></i>
-                ${actividad.edadMin}
-                a
-                ${actividad.edadMax}
-                años
+               <i data-lucide="users"></i>
+               ${mostrarEdad(actividad.edadMin, actividad.edadMax)}
             </span>
 
             <span>
