@@ -91,48 +91,29 @@ function mostrarError(titulo, mensaje) {
 // =========================
 // MOSTRAR ACTIVIDAD
 // =========================
-function formatearEdad(edadMin, edadMax) {
+function mostrarEdad(edadMin, edadMax) {
+    const min = String(edadMin ?? "").trim();
+    const max = String(edadMax ?? "").trim();
 
-  const min = String(edadMin ?? "").trim().toLowerCase();
-  const max = String(edadMax ?? "").trim().toLowerCase();
+    const minConsultar = min.toLowerCase() === "consultar";
+    const maxConsultar = max.toLowerCase() === "consultar";
 
-  // Todas las edades
-  if (
-    (min === "todas las edades" && max === "todas las edades") ||
-    (min === "0" && max === "99")
-  ) {
-    return "Todas las edades";
-  }
+    const minVacio = min === "" || minConsultar;
+    const maxVacio = max === "" || maxConsultar;
 
-  // Desde determinada edad
-  if (
-    min !== "" &&
-    max === "99"
-  ) {
-    return `Desde ${edadMin} años`;
-  }
+    if (minVacio && maxVacio) {
+        return "Consultar";
+    }
 
-  // Rango de edades
-  if (
-    min !== "" &&
-    max !== "" &&
-    min !== "todas las edades" &&
-    max !== "todas las edades"
-  ) {
-    return `${edadMin} a ${edadMax} años`;
-  }
+    if (!minVacio && maxVacio) {
+        return `Desde ${min} años`;
+    }
 
-  // Solo edad mínima
-  if (min !== "") {
-    return `Desde ${edadMin} años`;
-  }
+    if (minVacio && !maxVacio) {
+        return `Hasta ${max} años`;
+    }
 
-  // Solo edad máxima
-  if (max !== "") {
-    return `Hasta ${edadMax} años`;
-  }
-
-  return "Consultar";
+    return `${min} a ${max} años`;
 }
 function mostrarActividad(actividad) {
 
@@ -272,7 +253,7 @@ function mostrarActividad(actividad) {
                             <strong>Edad</strong>
 
                             <span>
-                              ${formatearEdad(actividad.edadMin, actividad.edadMax)}
+                              ${mostrarEdad(actividad.edadMin, actividad.edadMax)}
                             </span>
 
                         </div>
