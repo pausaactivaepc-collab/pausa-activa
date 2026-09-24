@@ -192,27 +192,7 @@ function mostrarInstituciones(instituciones) {
                 :
                 ""
             }
-                  ${
-                        actividad.sitioWeb &&
-                        actividad.sitioWeb !== "..."
-                        ?
-                        `
-                        <a
-                            href="${actividad.sitioWeb}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn-red-social">
-
-                            <i data-lucide="globe"></i>
-
-                            Sitio web
-
-                        </a>
-                        `
-                        :
-                        ""
-                    }
-
+                
         </div>
 
     </div>
