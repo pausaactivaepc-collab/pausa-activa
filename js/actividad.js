@@ -194,8 +194,8 @@ function mostrarActividad(actividad) {
                         </div>
 
                         <div>
-                            <strong>Lugar</strong>
-                            <span>${actividad.direccion}</span>
+                           <strong>Lugar</strong>
+                           <span>${actividad.lugar}</span>
                         </div>
 
                     </div>
