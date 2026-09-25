@@ -441,6 +441,25 @@ function mostrarEvento(evento) {
 
                             ""
                         }
+                        ${
+                           evento.sitioWeb
+                           ?
+                           `
+                           <a
+                                href="${evento.sitioWeb}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn-red-social">
+
+                               <i data-lucide="globe"></i>
+
+                                  Sitio web
+
+                          </a>
+                          `
+                          :
+                          ""
+                        }
 
                     </div>
                     <div class="evento-botones">
