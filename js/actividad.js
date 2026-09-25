@@ -100,6 +100,8 @@ function mostrarEdad(edadMin, edadMax) {
 
     const minVacio = min === "" || minConsultar;
     const maxVacio = max === "" || maxConsultar;
+    const minVacio = min === "" || minTodas las edades;
+    const maxVacio = max === "" || maxTodas las edades;
 
     if (minVacio && maxVacio) {
         return "Consultar";
