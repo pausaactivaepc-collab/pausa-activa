@@ -290,9 +290,9 @@ function mostrarEvento(evento) {
 
                             <strong>Lugar</strong>
 
-                            <span>
-                                ${evento.direccion}
-                            </span>
+                             <span>
+                                 ${evento.lugar}
+                             </span>
 
                         </div>
 
