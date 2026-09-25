@@ -192,6 +192,25 @@ function mostrarInstituciones(instituciones) {
                 :
                 ""
             }
+
+            ${
+                institucion.sitioWeb
+                ?
+                `
+                <a
+                    href="${institucion.sitioWeb}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                   <i data-lucide="globe"></i>
+
+                    Sitio web
+
+               </a>
+               `
+               :
+               ""
+               }
                 
         </div>
 
