@@ -350,81 +350,86 @@ function mostrarActividad(actividad) {
                     }
 
 
-                    ${
-                        actividad.inscripcion?.tipo !== "sin_inscripcion"
-                        ?
-                        `
-                        <div class="medios-contacto">
+                
+${
+    (
+        actividad.telefono ||
+        actividad.whatsapp ||
+        actividad.correo
+    )
+    ?
+    `
+    <div class="medios-contacto">
 
-                            <h4>
-                                Medios de contacto
-                            </h4>
-
-
-                            ${
-                                actividad.telefono
-                                ?
-                                `
-                                <div class="contacto-item">
-
-                                    <i data-lucide="phone"></i>
-
-                                    <div>
-                                        <strong>Teléfono</strong>
-                                        <span>${actividad.telefono}</span>
-                                    </div>
-
-                                </div>
-                                `
-                                :
-                                ""
-                            }
+        <h4>
+            Medios de contacto
+        </h4>
 
 
-                            ${
-                                actividad.whatsapp
-                                ?
-                                `
-                                <div class="contacto-item">
+        ${
+            actividad.telefono
+            ?
+            `
+            <div class="contacto-item">
 
-                                    <i data-lucide="message-circle"></i>
+                <i data-lucide="phone"></i>
 
-                                    <div>
-                                       <strong>WhatsApp</strong>
-                                       <span>${actividad.whatsapp}</span>
-                                    </div>
+                <div>
+                    <strong>Teléfono</strong>
+                    <span>${actividad.telefono}</span>
+                </div>
 
-                                </div>
-                                `
-                                :
-                                ""
-                            }
+            </div>
+            `
+            :
+            ""
+        }
 
 
-                            ${
-                                actividad.correo
-                                ?
-                                `
-                                <div class="contacto-item">
+        ${
+            actividad.whatsapp
+            ?
+            `
+            <div class="contacto-item">
 
-                                    <i data-lucide="mail"></i>
+                <i data-lucide="message-circle"></i>
 
-                                    <div>
-                                       <strong>Correo electrónico</strong>
-                                       <span>${actividad.correo}</span>
-                                    </div>
+                <div>
+                    <strong>WhatsApp</strong>
+                    <span>${actividad.whatsapp}</span>
+                </div>
 
-                                </div>
-                                `
-                                :
-                                ""
-                          }
+            </div>
+            `
+            :
+            ""
+        }
 
-                        </div>
-                        `
-                        :
-                        ""
-                    }
+
+        ${
+            actividad.correo
+            ?
+            `
+            <div class="contacto-item">
+
+                <i data-lucide="mail"></i>
+
+                <div>
+                    <strong>Correo electrónico</strong>
+                    <span>${actividad.correo}</span>
+                </div>
+
+            </div>
+            `
+            :
+            ""
+        }
+
+    </div>
+    `
+    :
+    ""
+}
 
 
                     ${
