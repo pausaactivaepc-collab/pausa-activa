@@ -7,7 +7,6 @@ const contador = document.getElementById("contador");
 const categorias = document.querySelectorAll(".chip");
 
 const filtroDistrito = document.getElementById("filtroDistrito");
-const filtroCosto = document.getElementById("filtroCosto");
 
 let categoriaSeleccionada = "Todas";
 
