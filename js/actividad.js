@@ -92,16 +92,27 @@ function mostrarError(titulo, mensaje) {
 // MOSTRAR ACTIVIDAD
 // =========================
 function mostrarEdad(edadMin, edadMax) {
+
     const min = String(edadMin ?? "").trim();
     const max = String(edadMax ?? "").trim();
 
-    const minConsultar = min.toLowerCase() === "consultar";
-    const maxConsultar = max.toLowerCase() === "consultar";
+    const minTexto = min.toLowerCase();
+    const maxTexto = max.toLowerCase();
+
+    // Todas las edades
+    if (
+        minTexto === "todas las edades" ||
+        maxTexto === "todas las edades"
+    ) {
+        return "Todas las edades";
+    }
+
+    // Consultar
+    const minConsultar = minTexto === "consultar";
+    const maxConsultar = maxTexto === "consultar";
 
     const minVacio = min === "" || minConsultar;
     const maxVacio = max === "" || maxConsultar;
-    const minVacio = min === "" || minTodas las edades;
-    const maxVacio = max === "" || maxTodas las edades;
 
     if (minVacio && maxVacio) {
         return "Consultar";
