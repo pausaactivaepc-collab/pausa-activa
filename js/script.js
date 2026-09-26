@@ -267,12 +267,6 @@ function aplicarFiltros() {
         : "";
 
 
-    const costo =
-        filtroCosto
-        ? filtroCosto.value
-        : "";
-
-
     const resultado =
         actividades.filter(actividad => {
 
@@ -359,17 +353,6 @@ function aplicarFiltros() {
                 actividad.distrito === distrito;
 
 
-            // COSTO
-
-            const coincideCosto =
-
-                costo === ""
-
-                ||
-
-                actividad.costo === costo;
-
-
             return (
 
                 coincideTexto
@@ -382,9 +365,6 @@ function aplicarFiltros() {
 
                 coincideDistrito
 
-                &&
-
-                coincideCosto
 
             );
 
@@ -413,20 +393,6 @@ buscador.addEventListener(
 if (filtroDistrito) {
 
     filtroDistrito.addEventListener(
-        "change",
-        aplicarFiltros
-    );
-
-}
-
-
-// =========================
-// FILTRO COSTO
-// =========================
-
-if (filtroCosto) {
-
-    filtroCosto.addEventListener(
         "change",
         aplicarFiltros
     );
